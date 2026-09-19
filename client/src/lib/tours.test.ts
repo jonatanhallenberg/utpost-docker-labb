@@ -23,8 +23,9 @@ describe('elevationGain', () => {
     expect(elevationGain([])).toBe(0)
   })
 
-  // Regressionstest – skuld ur docs/debt.md: "NaN höjdmeter" när en mätpunkt saknar höjd.
-  it('hoppar över mätpunkter utan höjd i stället för att ge NaN', () => {
+  // Regressionstest – skuld ur docs/debt.md: en mätpunkt utan höjd räknades som havsnivå,
+  // så nästa punkt gav en påhittad stigning (150 i stället för 50).
+  it('hoppar över mätpunkter utan höjd i stället för att räkna dem som noll', () => {
     expect(elevationGain([log(100), log(null), log(150)])).toBe(50)
   })
 })

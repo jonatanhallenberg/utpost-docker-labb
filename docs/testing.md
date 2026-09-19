@@ -18,7 +18,7 @@ Vi ärvde en klient utan ett enda test och ett API vars kontrakt bara fanns i hu
 
 | Del av Utpost | Nivå | Varför just där? | Finns test i dag? |
 |---|---|---|---|
-| Höjdmeter (`elevationGain`) | enhet | ren beräkning, hade en bugg (NaN) | ja, 3 st inkl. regression |
+| Höjdmeter (`elevationGain`) | enhet | ren beräkning, hade en bugg (saknad höjd = 0) | ja, 3 st inkl. regression |
 | Kilometerformatering | enhet | ren funktion | ja |
 | Guidevyn (lista + sök) | komponent | beteende i UI: filtrering, tom lista, fel | ja, 4 st |
 | Turvyn (tabell) | komponent | nästa vy att porta – test skrivs i samma PR | nej |

@@ -3,9 +3,10 @@ import type { TourLog } from '@utpost/shared'
 /**
  * Summan av alla stigningar mellan två mätpunkter i följd.
  *
- * Punkter utan höjdvärde (elevation_m är null i databasen för en del punkter)
- * hoppas över: stigningen räknas mellan de närmaste punkterna som HAR ett värde.
- * Den gamla React-koden räknade `null - 120` och fick NaN – och visade "NaN höjdmeter".
+ * Punkter utan höjdvärde (elevation_m är nullbar i databasen) hoppas över:
+ * stigningen räknas mellan de närmaste punkterna som HAR ett värde.
+ * Den gamla React-koden räknade `150 - null` = 150: en saknad punkt blev havsnivå,
+ * och nästa punkt gav en påhittad stigning på hela sin höjd.
  */
 export const elevationGain = (logs: TourLog[]): number => {
   let gain = 0
