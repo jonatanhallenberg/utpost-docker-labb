@@ -5,6 +5,10 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <RouterLink to="/guider">Utpost</RouterLink>
+    <nav>
+      <RouterLink to="/guider">Guider</RouterLink>
+      <RouterLink to="/turer">Turer</RouterLink>
+    </nav>
   </header>
   <main>
     <RouterView />
