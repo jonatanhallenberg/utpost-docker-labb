@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { get } from '../api.js'
+import { get } from '../api'
 
 const tours = ref([])
 const loading = ref(true)

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { get } from '../api.js'
+import { get } from '../api'
 
 const route = useRoute()
 const tour = ref(null)

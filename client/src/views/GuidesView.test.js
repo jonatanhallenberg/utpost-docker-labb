@@ -4,7 +4,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import GuidesView from './GuidesView.vue'
 
-vi.mock('../api.js', () => ({
+vi.mock('../api', () => ({
   get: vi.fn().mockResolvedValue([
     {
       id: 1,

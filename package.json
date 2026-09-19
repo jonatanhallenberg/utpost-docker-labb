@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.4.2",
   "workspaces": [
+    "shared",
     "api",
     "web",
     "client"
@@ -14,6 +15,7 @@
     "seed": "npm run seed --workspace=api",
     "dev:client": "npm run dev --workspace=client",
     "lint": "npm run lint --workspace=client",
+    "typecheck": "npm run typecheck --workspace=client && npm run typecheck --workspace=api",
     "format:check": "npm run format:check --workspace=client",
     "test": "npm run test --workspace=client",
     "build": "npm run build --workspace=client"

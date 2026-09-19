@@ -1,20 +1,21 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { get } from '../api.js'
+import type { Guide } from '@utpost/shared'
+import { get } from '../api'
 import GuideCard from '../components/GuideCard.vue'
 
-const guides = ref([])
+const guides = ref<Guide[]>([])
 const query = ref('')
 const loading = ref(true)
-const error = ref(null)
+const error = ref<string | null>(null)
 
 const load = async () => {
   loading.value = true
   error.value = null
   try {
-    guides.value = await get('/guides')
+    guides.value = await get<Guide[]>('/guides')
   } catch (err) {
-    error.value = err.message
+    error.value = (err as Error).message
   } finally {
     loading.value = false
   }

@@ -1,5 +1,5 @@
 # Utpost – CI (M1)
-# Varje PR mot main och varje push till main: lint, formatkontroll, tester och bygge.
+# Varje PR mot main och varje push till main: lint, formatkontroll, typkontroll, tester och bygge.
 # Rött någonstans = PR:en får inte mergas (branch protection kräver "Kvalitet" och "Bygg").
 name: CI
 
@@ -30,6 +30,7 @@ jobs:
       - run: npm ci             # installerar ALLA workspaces (api, web, client) – exakt enligt lockfilen
       - run: npm run lint
       - run: npm run format:check
+      - run: npm run typecheck   # M2: vue-tsc i client/ och tsc i api/ – kontraktet kontrolleras innan testerna körs
       - run: npm test
 
   build:

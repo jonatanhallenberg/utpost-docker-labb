@@ -1,7 +1,7 @@
-<script setup>
-defineProps({
-  guide: { type: Object, required: true },
-})
+<script setup lang="ts">
+import type { Guide } from '@utpost/shared'
+
+defineProps<{ guide: Guide }>()
 </script>
 
 <template>
