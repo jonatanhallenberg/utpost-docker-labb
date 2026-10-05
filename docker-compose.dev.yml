@@ -12,7 +12,7 @@ services:
     volumes:
       - utpost_pgdata:/var/lib/postgresql/data
   mongo:
-    image: mongo:8
+    image: mongo:8.2
     environment:
       MONGO_INITDB_ROOT_USERNAME: utpost
       MONGO_INITDB_ROOT_PASSWORD: utpost
